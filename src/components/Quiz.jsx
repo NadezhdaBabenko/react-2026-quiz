@@ -19,11 +19,6 @@ function Quiz() {
     selectAnswer,
   } = useQuiz();
 
-  // onMount
-  useEffect(() => {
-    setCurrentQuestionIndex(0);
-  }, []);
-
   // onChange
   useEffect(() => {
     setCurrentQuestionAnswered(false);

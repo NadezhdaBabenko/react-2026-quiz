@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { useQuiz } from "../store/QuizContext.jsx";
-import { use } from "react";
 
 function Answer({ answer }) {
   const { userAnswers, selectAnswer, currentQuestionIndex } = useQuiz();
