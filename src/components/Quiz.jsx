@@ -28,28 +28,11 @@ function Quiz() {
   useEffect(() => {
     setCurrentQuestionAnswered(false);
     const timer = setTimeout(() => {
+      selectAnswer(null);
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     }, TIMER); // 5 секунд
     return () => clearTimeout(timer); // очистка при размонтировании или новом рендере
   }, [currentQuestionIndex]); // каждый раз, когда индекс меняется — перезапускаем таймер
-
-  // useEffect(() => {
-  //   setCurrentQuestionAnswered(false);
-
-  //   const timer = setTimeout(() => {
-  //     const alreadyAnswered = userAnswers.some(
-  //       (entry) => entry.questionIndex === currentQuestionIndex,
-  //     );
-
-  //     if (!alreadyAnswered) {
-  //       selectAnswer(null); // ← вот здесь
-  //     }
-
-  //     setCurrentQuestionIndex((prev) => prev + 1);
-  //   }, TIMER);
-
-  //   return () => clearTimeout(timer);
-  // }, [currentQuestionIndex]);
 
   useEffect(() => {
     if (!currentQuestionAnswered) return;
